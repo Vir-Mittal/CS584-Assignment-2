@@ -31,14 +31,7 @@ def loadDataAsDataFrame(f_path):
     return df
 
 def preprocess_text(raw_text):
-    '''
-        Preprocessing function
-        PROGRAMMING TIP: Always a good idea to have a *master* preprocessing function that reads in a string and returns the
-        preprocessed string after applying a series of functions.
-    '''
-    # Replace/remove username
-    # raw_text = re.sub('(@[A-Za-z0-9\_]+)', '@username_', raw_text)
-    #stemming and lowercasing (no stopword removal
+
     words = [stemmer.stem(w) for w in raw_text.lower().split()]
     return (" ".join(words))
 
